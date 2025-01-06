@@ -58,10 +58,13 @@ const Login = () => {
         }),
       });
 
+
       if (response.ok) {
         const data = (await response.json()) as AuthResponse;
 
-        if (data.body.refreshToken && data.body.accessToken) {
+
+
+        if (data.body.refreshToken && data.body.token) {
           auth.saveUser(data);
         }
 
@@ -72,7 +75,6 @@ const Login = () => {
         setErrorResponse(json.body.error);
       }
     } catch (err) {
-      console.log("entrada error");
       console.error(err);
     }
   };

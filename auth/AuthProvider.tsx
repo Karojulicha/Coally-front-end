@@ -33,9 +33,8 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   };
 
   const saveUser = (userData:AuthResponse) => {
-    setAccessToken(userData.body.accessToken);
+    setAccessToken(userData.body.token);
     setRefreshToken(userData.body.refreshToken);
-
     localStorage.setItem("token", JSON.stringify(userData.body.refreshToken));
     setIsAuthenticated(true);
   };

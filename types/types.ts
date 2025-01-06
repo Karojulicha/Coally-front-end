@@ -12,7 +12,7 @@ export interface TaskType {
 export interface AuthResponse {
   body: {
     user: User;
-    accessToken: string;
+    token: string;
     refreshToken: string;
   };
 }
